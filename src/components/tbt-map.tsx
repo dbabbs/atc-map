@@ -27,8 +27,6 @@ import length from "@turf/length";
 import along from "@turf/along";
 import bearing from "@turf/bearing";
 
-export const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN;
-
 /*
   This component's viewstate is controlled by the parent component.
   Pass in a viewState and setViewState in order to move the map around
@@ -329,38 +327,3 @@ export const TBTMap = ({
     </>
   );
 };
-
-{
-  /* </DeckGL>
-      <MapGL
-        mapboxAccessToken={MAPBOX_TOKEN}
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-        onMove={(evt) => setViewState(evt.viewState)}
-        mapStyle={mapStyle}
-        {...viewState}
-        onClick={(evt) => {
-          console.log(evt.lngLat);
-        }}
-      >
-        {/* <Source id="taxiways" type="geojson" data={taxiWayData}>
-          <Layer
-            id="taxiways-layer"
-            type="line"
-            layout={{
-              "line-join": "round",
-              "line-cap": "round",
-            }}
-            paint={{
-              "line-color": "red",
-              "line-width": 3,
-            }}
-          />
-        </Source> */
-}
-//       {children}
-//     </MapGL>
-//   );
-// }; */}

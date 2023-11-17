@@ -1,25 +1,14 @@
 import { styled, useStyletron } from "baseui";
-import { Navigation } from "../components/navigation";
 import { AirportMap } from "../components/airport-map";
 import { useState, useEffect } from "react";
 import { hexToRgb } from "baseui/styles";
-import { Polyline } from "../components/airport-map";
-import {
-  LabelSmall,
-  HeadingXSmall,
-  ParagraphSmall,
-  ParagraphMedium,
-  LabelMedium,
-  ParagraphLarge,
-  LabelLarge,
-} from "baseui/typography";
+import { HeadingXSmall, ParagraphLarge, LabelLarge } from "baseui/typography";
 import taxiWayData from "../data/taxiways.json";
 import Head from "next/head";
 import { Flex } from "../components/util/flex";
 import { Skeleton } from "baseui/skeleton";
 import { Button, SIZE, KIND } from "baseui/button";
-import planeImg from "../plane.png";
-import { Marker } from "react-map-gl";
+
 import { TBTMap } from "../components/tbt-map";
 
 import { useInterval } from "usehooks-ts";
@@ -45,7 +34,7 @@ export const StatRow = ({ label, value, color }) => {
   );
 };
 
-const Panel = ({ stats, isLoading, revalidate }) => {
+const Panel = ({ stats, isLoading }) => {
   const [css, theme] = useStyletron();
   return (
     <div

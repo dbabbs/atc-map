@@ -16,7 +16,6 @@ import { ScenegraphLayer } from "@deck.gl/mesh-layers";
 import { GeoJsonLayer } from "@deck.gl/layers";
 import { _TerrainExtension as TerrainExtension } from "@deck.gl/extensions";
 import { BitmapLayer } from "@deck.gl/layers";
-export const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN;
 
 /*
 This component's viewstate is controlled by the parent component.
@@ -210,7 +209,7 @@ export const AirportMap = ({
       pickable: true,
 
       scenegraph: MODEL_URL,
-      sizeScale: 10,
+      sizeScale: 3,
       sizeMinPixels: 0.1,
       sizeMaxPixels: 5,
       getPosition: (d) => [...d, 600],
@@ -228,38 +227,3 @@ export const AirportMap = ({
     />
   );
 };
-
-{
-  /* </DeckGL>
-    <MapGL
-      mapboxAccessToken={MAPBOX_TOKEN}
-      style={{
-        width: "100%",
-        height: "100%",
-      }}
-      onMove={(evt) => setViewState(evt.viewState)}
-      mapStyle={mapStyle}
-      {...viewState}
-      onClick={(evt) => {
-        console.log(evt.lngLat);
-      }}
-    >
-      {/* <Source id="taxiways" type="geojson" data={taxiWayData}>
-        <Layer
-          id="taxiways-layer"
-          type="line"
-          layout={{
-            "line-join": "round",
-            "line-cap": "round",
-          }}
-          paint={{
-            "line-color": "red",
-            "line-width": 3,
-          }}
-        />
-      </Source> */
-}
-//       {children}
-//     </MapGL>
-//   );
-// }; */}
