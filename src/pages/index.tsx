@@ -219,7 +219,7 @@ const Page = () => {
 
   const router = useRouter();
 
-  const airplaneCode = router.query?.code || "";
+  const airplaneCode = router.query?.code || "n6238r";
 
   const [cacheBust, setCacheBust] = useState(`${Math.random()}`);
 
